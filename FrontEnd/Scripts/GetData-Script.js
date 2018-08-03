@@ -3,16 +3,15 @@ var request = new XMLHttpRequest();
 
 
 function Search() {
-  var contentTerms = document.getElementById("content").value;
   var page = document.getElementById("page").value;
   console.log(contentTerms);
   console.log(page);
   
   //var search = 'http://localhost/class/movieAPI/search_results.php' + '?query=' + searchTerms;
-  var search = 'http://10.10.16.191/back-end/AddData_results.php' + '?query=' + contentTerms + '&page=' + page;
+  var search = 'http://10.10.16.191/back-end/GetData_results.php' + '?query=' + contentTerms + '&page=' + page;
 
   console.log(search);
-  request.open('POST', search);
+  request.open('GET', search);
   request.onload = loadComplete;
   request.send();
 }
