@@ -3,13 +3,11 @@ var request = new XMLHttpRequest();
 
 
 function Search() {
-  var contentTerms = document.getElementById("content").value;
-  var page = document.getElementById("page").value;
-  console.log(contentTerms);
-  console.log(page);
+  var DataID = document.getElementById("id");
+  console.log(DataID);
   
   //var search = 'http://localhost/class/movieAPI/search_results.php' + '?query=' + searchTerms;
-  var search = 'http://10.10.16.191/back-end/DeleteData_results.php' + '?query=' + contentTerms + '&page=' + page;
+  var search = 'http://10.10.16.191/back-end/DeleteData.php' + '?query=' + DataID;
 
   console.log(search);
   request.open('DELETE', search);
