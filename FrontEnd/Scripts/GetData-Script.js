@@ -8,7 +8,7 @@ function Search() {
   console.log(page);
   
   //var search = 'http://localhost/class/movieAPI/search_results.php' + '?query=' + searchTerms;
-  var search = 'http://10.10.16.191/back-end/GetData_results.php' + '?query=' + contentTerms + '&page=' + page;
+  var search = 'http://10.10.16.191/back-end/GetSpecficData.php' + '?page=' + page;
 
   console.log(search);
   request.open('GET', search);

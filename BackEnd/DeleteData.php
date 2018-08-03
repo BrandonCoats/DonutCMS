@@ -2,9 +2,9 @@
     header("Access-Control-Allow-Origin: *");
     include 'dbconfig.php';
 
-    $insert = "Insert into data(page, content) values (".$mysqli->real_escape_string($_GET['page']).", ".$mysqli->real_escape_string($_GET['content']).")";
+    $delete = "Delete from data where id = ".$mysqli->real_escape_string($_GET['id']);
 
-$result = $mysqli->exec($insert);
+$result = $mysqli->exec($delete);
 echo $result;
 //disconnect from database
 $result->free();
