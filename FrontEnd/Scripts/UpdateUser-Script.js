@@ -2,16 +2,18 @@ var data;
 var request = new XMLHttpRequest();
 
 
-function GetData() {
-  var page = document.getElementById("page").value;
-  console.log(contentTerms);
-  console.log(page);
+function Search() {
+  var contentID = document.getElementById("id").value;
+  var username = document.getElementById("username").value;
+  var passhash = createHash(document.getElementById("password").value);
+  var isAdmin = document.getElementById("isAdmin").value;
+
   
   //var search = 'http://localhost/class/movieAPI/search_results.php' + '?query=' + searchTerms;
-  var search = 'http://10.10.16.191/back-end/GetSpecficData.php' + '?page=' + page;
+  var search = 'http://10.10.16.191/back-end/UpdateUser.php' + '?id=' + contentID + '&username=' + username + '&passHash='+ passhash + '&isAdmin'+isAdmin;
 
   console.log(search);
-  request.open('GET', search);
+  request.open('PUT', search);
   request.onload = loadComplete;
   request.send();
 }

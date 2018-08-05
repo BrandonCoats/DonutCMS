@@ -2,16 +2,16 @@ var data;
 var request = new XMLHttpRequest();
 
 
-function GetData() {
-  var page = document.getElementById("page").value;
-  console.log(contentTerms);
-  console.log(page);
+function CreateAccount() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+  var hash = createHash(password);
   
   //var search = 'http://localhost/class/movieAPI/search_results.php' + '?query=' + searchTerms;
-  var search = 'http://10.10.16.191/back-end/GetSpecficData.php' + '?page=' + page;
+  var search = 'http://10.10.16.191/back-end/AddUser.php' + '?username=' + username + '&passHash=' + hash;
 
   console.log(search);
-  request.open('GET', search);
+  request.open('POST', search);
   request.onload = loadComplete;
   request.send();
 }

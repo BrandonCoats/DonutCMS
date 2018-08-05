@@ -2,16 +2,15 @@ var data;
 var request = new XMLHttpRequest();
 
 
-function GetData() {
-  var page = document.getElementById("page").value;
-  console.log(contentTerms);
-  console.log(page);
+function EraseUser() {
+  var UserID = document.getElementById("id");
+  console.log(UserID);
   
   //var search = 'http://localhost/class/movieAPI/search_results.php' + '?query=' + searchTerms;
-  var search = 'http://10.10.16.191/back-end/GetSpecficData.php' + '?page=' + page;
+  var search = 'http://10.10.16.191/back-end/DeleteUser.php' + '?query=' + UserID;
 
   console.log(search);
-  request.open('GET', search);
+  request.open('DELETE', search);
   request.onload = loadComplete;
   request.send();
 }

@@ -2,13 +2,12 @@ var data;
 var request = new XMLHttpRequest();
 
 
-function GetData() {
-  var page = document.getElementById("page").value;
-  console.log(contentTerms);
-  console.log(page);
+function SignIn() {
+  var username = document.getElementById("username").value;
+  var passHash = createHash(document.getElementById("password").value);
   
   //var search = 'http://localhost/class/movieAPI/search_results.php' + '?query=' + searchTerms;
-  var search = 'http://10.10.16.191/back-end/GetSpecficData.php' + '?page=' + page;
+  var search = 'http://10.10.16.191/back-end/GetSpecficUser.php' + '?username=' + username + '&password='+passHash;
 
   console.log(search);
   request.open('GET', search);

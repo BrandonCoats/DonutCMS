@@ -2,7 +2,7 @@ var data;
 var request = new XMLHttpRequest();
 
 
-function Search() {
+function DeleteData() {
   var DataID = document.getElementById("id");
   console.log(DataID);
   
