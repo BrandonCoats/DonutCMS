@@ -7,7 +7,7 @@ function EraseUser() {
   console.log(UserID);
   
   //var search = 'http://localhost/class/movieAPI/search_results.php' + '?query=' + searchTerms;
-  var search = 'http://10.10.16.191/back-end/DeleteUser.php' + '?query=' + UserID;
+  var search = 'http://10.10.16.191/back-end/DeleteUser.php' + '?id=' + UserID;
 
   console.log(search);
   request.open('DELETE', search);

@@ -7,7 +7,7 @@ function DeleteData() {
   console.log(DataID);
   
   //var search = 'http://localhost/class/movieAPI/search_results.php' + '?query=' + searchTerms;
-  var search = 'http://10.10.16.191/back-end/DeleteData.php' + '?query=' + DataID;
+  var search = 'http://10.10.16.191/back-end/DeleteData.php' + '?id=' + DataID;
 
   console.log(search);
   request.open('DELETE', search);

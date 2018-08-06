@@ -3,7 +3,7 @@
 //include database connection
 include 'dbconfig.php';
 //$mysqli->real_escape_string() function helps us prevent attacks such as SQL injection
-$query = "SELECT * FROM users where username LIKE '%".$mysqli->real_escape_string($_GET['username'])."%' AND password like '%".$mysqli->real_escape_string($_GET['password']).";
+$query = "SELECT * FROM users where id LIKE '%".$mysqli->real_escape_string($_GET['id'])."%'";
         }
        
 //echo $query;
@@ -21,7 +21,6 @@ if( $num_results > 0){ //it means there's already at least one database record
         //creating new table row per record
         $myJson .= '{';
             $myJson .= '"id":'.'"'.$id.'"'.',';
-            $myJson .= '"username":'.'"'.$username.'"'.',';
             $myJson .= '"isAdmin":'.'"'.$isAdmin.'"';
             $myJson .= '}';
             echo $myJson;

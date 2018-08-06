@@ -3,12 +3,8 @@
 //include database connection
 include 'dbconfig.php';
 //$mysqli->real_escape_string() function helps us prevent attacks such as SQL injection
-$query = "SELECT * FROM data";
-
-if(isset($_GET['page']))
-        {
-            $query .= "AND summary LIKE '%".$mysqli->real_escape_string($_GET['query'])."%'";
-        }
+$query = "SELECT * FROM data where"."AND summary LIKE '%".$mysqli->real_escape_string($_GET['query'])."%'";
+        
 if(isset($_GET['id']))
         {
             $query .= "AND budget <= '".$mysqli->real_escape_string($_GET['budget'])."'";
@@ -24,34 +20,25 @@ if( $num_results > 0){ //it means there's already at least one database record
 
     //loop to show each records
     $numLeft = $num_results;
-    $myJson = '{"All Data": [';
-    while( $row = $result->fetch_assoc() ){
-
-        //this will make $row['firstname'] to
-        //just $firstname only
-        extract($row);
-        
-        //creating new table row per record
-        $myJson .= '{';
-            $myJson .= '"id":'.'"'.$id.'"'.',';
-            $myJson .= '"page":'.'"'.$page.'"'.',';
-            $myJson .= '"content":'.'"'.$content.'"';
-            $myJson .= '}';
-            if($numLeft > 1)
-            {
-                $myJson .= ',';
-            }
-            else
-            {
-                $myJson .= ']}';
-            }
-            $numLeft = $numLeft - 1;
-    }
-    echo $myJson;
-}else{
-    $myJson = '{"info": "No results found"}';
+    if($numLeft == 1)
+    {
+        extract($results);
+        $myJson = '{';
+        $myJson .= '"id":'.'"'.$id.'"'.',';
+        $myJson .= '"page":'.'"'.$page.'"'.',';
+        $myJson .= '"content":'.'"'.$content.'"';
+        $myJson .= '}';
         echo $myJson;
-}
+    }
+    else{
+        $myJson ='{ "info": "Error: ['.$numLeft.'] results found."}';
+    }
+            
+        }else{
+            $myJson = '{"info": "No results found"}';
+                echo $myJson;
+        }
+    }
 //disconnect from database
 $result->free();
 $mysqli->close();
