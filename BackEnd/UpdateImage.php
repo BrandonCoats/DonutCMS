@@ -2,10 +2,12 @@
     header("Access-Control-Allow-Origin: *");
     include 'dbconfig.php';
 
-    $update = "Update users set username = ".$mysqli->real_escape_string($_GET['username']).", password = ".$mysqli->real_escape_string($_GET['passHash']).", isAdmin = ".$mysqli->real_escape_string($_GET['isAdmin'])'.where id = '.$mysqli->real_escape_string($_GET['id']).";";
+    $update = 'Update image set page = "'.$mysqli->real_escape_string($_GET['page']).'", path = "'.$mysqli->real_escape_string($_GET['path']).'" where id = '.$mysqli->real_escape_string($_GET['id']).";";
 
+    //echo "{ 'info': ".$update."}"
 $result = $mysqli->exec($update);
 echo $result;
+if($result != null){
 //disconnect from database
 $result->free();
 $mysqli->close();
