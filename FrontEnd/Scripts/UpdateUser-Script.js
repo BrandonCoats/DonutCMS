@@ -21,7 +21,7 @@ function UpdateUser() {
 function loadComplete(evt) {
   data = JSON.parse(request.responseText);
   //data = request.responseText;
-  Movies = data.Movies;
+  DataUser = data.Movies;
   document.getElementById("res").innerHTML = "Results:";
   var resultBox = document.getElementById("results");
   resultBox.innerHTML = "";

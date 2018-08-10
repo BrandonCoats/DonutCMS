@@ -18,10 +18,10 @@ function DeleteData() {
 function loadComplete(evt) {
   data = JSON.parse(request.responseText);
   //data = request.responseText;
-  Movies = data.Movies;
+  Data = data.data;
   document.getElementById("res").innerHTML = "Results:";
   var resultBox = document.getElementById("results");
   resultBox.innerHTML = "";
-  console.log(Movies);
+  console.log(Data);
   
   }
