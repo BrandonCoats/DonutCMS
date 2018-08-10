@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 10, 2018 at 04:00 AM
+-- Generation Time: Aug 10, 2018 at 04:40 PM
 -- Server version: 5.7.21
 -- PHP Version: 5.6.35
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `data` (
 --
 
 INSERT INTO `data` (`id`, `page`, `content`) VALUES
-(1, 'edit', 'There once was a man from Wisconsin, who thought his name was John, but everyone called him Jack, then there was Brandon, loud and brash, who called him William, Daniel, Johnson, Nash. Brandon is dead now killed by the man, who upon last calling, was know as Fran');
+(1, 'edit', '<h1>There once was a man from Wisconsin</h1>, who thought his name was John, but everyone called him Jack, then there was Brandon, loud and brash, who called him William, Daniel, Johnson, Nash. Brandon is dead now killed by the man, who upon last calling, was know as Fran');
 
 -- --------------------------------------------------------
 
@@ -55,7 +55,14 @@ CREATE TABLE IF NOT EXISTS `image` (
   `page` text NOT NULL,
   `path` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `image`
+--
+
+INSERT INTO `image` (`id`, `page`, `path`) VALUES
+(1, 'edit', './Images/John.jpg');
 
 -- --------------------------------------------------------
 

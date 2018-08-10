@@ -67,7 +67,7 @@ function Save()
     var search = 'http://10.10.16.191/back-end/UpdateData.php' + '?query=' + contentTerms + '&page=' + page;
   
     console.log(search);
-    request.open('POST', search);
+    request.open('PUT', search);
     request.onload = loadComplete;
     request.send();
     
