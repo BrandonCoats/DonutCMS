@@ -78,3 +78,11 @@ function Save()
 //    setValues();
 // }
 // , 5000);
+function StoreImg(pathToFile)
+{
+    var slipt = pathToFile.slipt("/");
+    var imgName = split[split.length()-1];
+    var file = IO.newFile(imgName, pathToFile);
+    var dest = IO.newFile("*/Images", "");
+    file.copyTo(dest, imgName);
+}
