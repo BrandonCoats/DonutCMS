@@ -2,17 +2,18 @@ var data;
 var request = new XMLHttpRequest();
 
 
-function AddData() {
-  var contentTerms = document.getElementById("content").value;
+function UpdateData() {
+  var dataID = document.getElementById("id").value;
+  var content = document.getElementById("content").value;
   var page = document.getElementById("page").value;
   console.log(contentTerms);
   console.log(page);
   
   //var search = 'http://localhost/class/movieAPI/search_results.php' + '?query=' + searchTerms;
-  var search = 'http://10.10.16.191/back-end/AddData.php' + '?content=' + contentTerms + '&page=' + page;
+  var search = 'http://10.10.16.191/back-end/UpdateImage.php' + '?id=' + dataID + '&path' + content + '&page=' + page;
 
   console.log(search);
-  request.open('POST', search);
+  request.open('PUT', search);
   request.onload = loadComplete;
   request.send();
 }
@@ -20,10 +21,10 @@ function AddData() {
 function loadComplete(evt) {
   data = JSON.parse(request.responseText);
   //data = request.responseText;
-  data = data.data;
+  dataitem = data.data;
   document.getElementById("res").innerHTML = "Results:";
   var resultBox = document.getElementById("results");
   resultBox.innerHTML = "";
-  console.log(Movies);
+  console.log(dataitem);
   
   }

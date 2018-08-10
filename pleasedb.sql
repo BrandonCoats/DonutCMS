@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 06, 2018 at 04:48 PM
+-- Generation Time: Aug 10, 2018 at 04:00 AM
 -- Server version: 5.7.21
 -- PHP Version: 5.6.35
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `data` (
 --
 
 INSERT INTO `data` (`id`, `page`, `content`) VALUES
-(1, 'FrontEnd/Pages/page.html', 'There once was a man from Wisconsin, who thought his name was John, but everyone called him Jack, then there was Brandon, loud and brash, who called him William, Daniel, Johnson, Nash. Brandon is dead now killed by the man, who upon last calling, was know as Fran');
+(1, 'edit', 'There once was a man from Wisconsin, who thought his name was John, but everyone called him Jack, then there was Brandon, loud and brash, who called him William, Daniel, Johnson, Nash. Brandon is dead now killed by the man, who upon last calling, was know as Fran');
 
 -- --------------------------------------------------------
 

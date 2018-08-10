@@ -3,13 +3,13 @@ var request = new XMLHttpRequest();
 
 
 function AddData() {
-  var contentTerms = document.getElementById("content").value;
+  var contentTerms = document.getElementById("path").value;
   var page = document.getElementById("page").value;
   console.log(contentTerms);
   console.log(page);
   
   //var search = 'http://localhost/class/movieAPI/search_results.php' + '?query=' + searchTerms;
-  var search = 'http://10.10.16.191/back-end/AddData.php' + '?content=' + contentTerms + '&page=' + page;
+  var search = 'http://10.10.16.191/back-end/AddImage.php' + '?path=' + contentTerms + '&page=' + page;
 
   console.log(search);
   request.open('POST', search);

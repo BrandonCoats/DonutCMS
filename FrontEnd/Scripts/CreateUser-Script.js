@@ -19,10 +19,10 @@ function CreateAccount() {
 function loadComplete(evt) {
   data = JSON.parse(request.responseText);
   //data = request.responseText;
-  Movies = data.Movies;
+  user = data.user;
   document.getElementById("res").innerHTML = "Results:";
   var resultBox = document.getElementById("results");
   resultBox.innerHTML = "";
-  console.log(Movies);
+  console.log(user);
   
   }

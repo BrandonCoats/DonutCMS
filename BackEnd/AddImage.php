@@ -2,18 +2,17 @@
     header("Access-Control-Allow-Origin: *");
     include 'dbconfig.php';
 
-    $update = 'UPDATE data SET content = "'.$mysqli->real_escape_string($_GET['content']).'" WHERE page = "'.$mysqli->real_escape_string($_GET['page'].'"');
+    $insert = "Insert into image(page, path) values (".$mysqli->real_escape_string($_GET['page']).", ".$mysqli->real_escape_string($_GET['path']).")";
 
-    //echo "{ 'info': ".$update."}"
- 
-// echo $result
-if($mysqli->query($update) === TRUE){
+$result = $mysqli->exec($insert);
+echo $result;
 //disconnect from database
 $result->free();
 $mysqli->close();
     exit();
 }else{
     //if unable to create new record
+    echo $query;
     echo "Database Error: Unable to retrieve records.";
 }
 //close database connection
