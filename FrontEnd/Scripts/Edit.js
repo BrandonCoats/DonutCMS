@@ -10,6 +10,8 @@ document.designMode='on'; void 0
 // }
 var data;
 var request = new XMLHttpRequest();
+var imgData;
+var imgRequest = new XMLHttpRequest();
 window.onload = function(){
     LoadPage();
 }
@@ -24,6 +26,15 @@ function LoadPage() {
   request.open('POST', search);
   request.onload = loadComplete;
   request.send();
+
+ //start loading img file
+  var search = 'http://localhost/class/DonutCms/BackEnd/LoadData.php' + '?page=' + page;
+
+  console.log(search);
+  request.open('POST', search);
+  request.onload = loadComplete;
+  request.send();
+
 }
 
 function loadComplete(evt) {
@@ -45,7 +56,7 @@ function Save()
     console.log(page);
     
     //var search = 'http://localhost/class/movieAPI/search_results.php' + '?query=' + searchTerms;
-    var search = 'http://10.10.16.191/back-end/AddData.php' + '?query=' + contentTerms + '&page=' + page;
+    var search = 'http://10.10.16.191/back-end/UpdateData.php' + '?query=' + contentTerms + '&page=' + page;
   
     console.log(search);
     request.open('POST', search);
