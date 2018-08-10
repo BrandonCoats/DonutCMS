@@ -16,8 +16,8 @@ var request = new XMLHttpRequest();
 
 
 function LoadPage() {
-  var page = document.getElementById("title").value;
-  console.log(contentTerms);
+  var page = document.getElementById("title").innerHTML;
+  page = "edit";
   console.log(page);
   
   //var search = 'http://localhost/class/movieAPI/search_results.php' + '?query=' + searchTerms;
@@ -30,13 +30,9 @@ function LoadPage() {
 }
 
 function loadComplete(evt) {
-  data = JSON.parse(request.responseText);
+  data = JSON.parse(request);
   //data = request.responseText;
-  Movies = data.Movies;
-  document.getElementById("res").innerHTML = "Results:";
-  var resultBox = document.getElementById("results");
-  resultBox.innerHTML = "";
-  console.log(Movies);
+  console.log(data);
   
   }
 function Save()
