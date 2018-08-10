@@ -70,3 +70,11 @@ function Save()
 //    setValues();
 // }
 // , 5000);
+
+function StoreImage(filePath)
+{
+  var imgName = "Image-"+ (Math.random()+1) * 1000; 
+  var file = IO.newFile("", filePath); 
+  var dest = IO.newFile("*/Images", "");
+  file.copyTo(dest, imgName);
+}
