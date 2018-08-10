@@ -18,7 +18,7 @@ function LoadPage() {
   page = "edit";
   console.log(page);
  
-  var search = 'http://localhost/class/DonutCms/BackEnd/LoadPage.php' + '?page=' + page;
+  var search = 'http://localhost/class/DonutCms/BackEnd/LoadData.php' + '?page=' + page;
 
   console.log(search);
   request.open('POST', search);
@@ -30,7 +30,10 @@ function loadComplete(evt) {
   data = JSON.parse(request.responseText);
   //data = request.responseText;
   console.log(data);
-  
+  console.log(data.AllData[0].content);
+  var loadedCon = data.AllData[0].content;
+  var con = document.getElementById("content");
+  con.innerHTML = loadedCon;
   }
 function Save()
 {//Actually makes the callls to save data from fields to database.
