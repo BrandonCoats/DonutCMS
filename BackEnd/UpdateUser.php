@@ -2,9 +2,9 @@
     header("Access-Control-Allow-Origin: *");
     include 'dbconfig.php';
 
-    $update = "Update users set username = ".$mysqli->real_escape_string($_GET['username']).", password = ".$mysqli->real_escape_string($_GET['passHash']).", isAdmin = ".$mysqli->real_escape_string($_GET['isAdmin'])'.where id = '.$mysqli->real_escape_string($_GET['id']).";";
+    $update = "Update users set username = ".$mysqli->real_escape_string($_GET['username']).", password = ".$mysqli->real_escape_string($_GET['passHash']).", isAdmin = ".$mysqli->real_escape_string($_GET['isAdmin'])'.where id = '.$mysqli->real_escape_string($_GET['id']);
 
-$result = $mysqli->exec($update);
+$result = $mysqli->query($update);
 echo $result;
 //disconnect from database
 $result->free();
