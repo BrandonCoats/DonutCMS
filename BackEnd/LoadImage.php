@@ -16,7 +16,7 @@ if( $num_results > 0){ //it means there's already at least one database record
 
     //loop to show each records
     $numLeft = $num_results;
-    $myJson = '{"All Data": [';
+    $myJson = '{"AllData": [';
     while( $row = $result->fetch_assoc() ){
 
         //this will make $row['firstname'] to
@@ -27,7 +27,7 @@ if( $num_results > 0){ //it means there's already at least one database record
         $myJson .= '{';
             $myJson .= '"id":'.'"'.$id.'"'.',';
             $myJson .= '"page":'.'"'.$page.'"'.',';
-            $myJson .= '"path":'.'"'.$content.'"';
+            $myJson .= '"path":'.'"'.$path.'"';
             $myJson .= '}';
             if($numLeft > 1)
             {
