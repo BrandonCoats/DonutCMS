@@ -8,19 +8,16 @@ document.designMode='on'; void 0
 // console.log(contentData);
 // console.log(imageData);
 // }
+var data;
+var request = new XMLHttpRequest();
 window.onload = function(){
     LoadPage();
 }
-var data;
-var request = new XMLHttpRequest();
-
-
 function LoadPage() {
   var page = document.getElementById("title").innerHTML;
   page = "edit";
   console.log(page);
-  
-  //var search = 'http://localhost/class/movieAPI/search_results.php' + '?query=' + searchTerms;
+ 
   var search = 'http://localhost/class/DonutCms/BackEnd/LoadPage.php' + '?page=' + page;
 
   console.log(search);
@@ -30,7 +27,7 @@ function LoadPage() {
 }
 
 function loadComplete(evt) {
-  data = JSON.parse(request);
+  data = JSON.parse(request.responseText);
   //data = request.responseText;
   console.log(data);
   
