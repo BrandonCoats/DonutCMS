@@ -42,7 +42,7 @@ if( $num_results > 0){ //it means there's already at least one database record
     echo $myJson;
 }else{
     $myJson = '{"info": "No results found",
-                "Your query": '.$query.'}';
+                "Your query": "'.$query.'"}';
         echo $myJson;
 }
 //disconnect from database
