@@ -9,11 +9,10 @@
       <div id="nav">
           <h1 id="logo"><a href="index.html">Donut CMS</a></h1>
           <img id="donut" src="Images/donut.png">
-          <a href="signup.html">Sign-up</a>
-          <a href="login.html">Log-in</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
-          <a href="edit.html">Edit</a>
+          <a href="signup.php">Sign-up</a>
+          <a href="login.php">Log-in</a>
+          <a href="about.php">About</a>
+          <a href="contact.php">Contact</a>
       </div>
       <div id="body">
           <div class="outer">
