@@ -3,7 +3,7 @@
   <head>
       <title>Home</title>
       <link href='CSS/style.css', rel='stylesheet'>
-      <script src='./Scripts/Sign-inUser-Script.js' type="text/javascript"/>
+      <script src='./Scripts/Sign-inUser-Script.js' type="text/javascript"></script>
   </head>
   <body>
     <div class="container">
@@ -20,7 +20,7 @@
               <div class="middle">
                   <div class="inner">
                       <h1>Login</h1>
-                      <form action="action_page.php">
+                      <form onsubmit="SignIn()">
                           <div class="form-container">
                             <hr/>
                             <label for="uname"><b>Username</b></label>
@@ -29,7 +29,7 @@
                             <label for="psw"><b>Password</b></label>
                             <input type="password" placeholder="Enter Password" name="password" required>
                             <br/>
-                            <button type="submit" onclick="SignIn()">Login</button>
+                            <button type="submit" >Login</button>
                             <br/>
                             <label>
                               <input type="checkbox" checked="checked" name="remember"> Remember me
@@ -44,5 +44,6 @@
         <footer>---Copyright Donut CMS 2018---</footer>
       </div>
     </div>
+    <script src='./Scripts/Sign-inUser-Script.js' type="text/javascript"></script>
   </body>
 </html>

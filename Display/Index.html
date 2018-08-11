@@ -13,7 +13,14 @@
           <a href="login.html">Log-in</a>
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
-          <a href="EIndex.php">Edit</a>
+          <script>
+            var userJson = sessionStorage.getItem("user");
+            var user = JSON.parse(userJson);
+            if(user.isAdmin)
+            { 
+              <a href="EIndex.php">Edit</a>
+            }
+          </script>
       </div>
       <div id="body">
           <div class="outer">
