@@ -22,6 +22,7 @@ if( $num_results > 0){ //it means there's already at least one database record
         $myJson .= '{';
             $myJson .= '"id":'.'"'.$id.'"'.',';
             $myJson .= '"username":'.'"'.$username.'"'.',';
+            $myJson .= '"password":'.'"'.$password.'",';
             $myJson .= '"isAdmin":'.'"'.$isAdmin.'"';
             $myJson .= '}';
             echo $myJson;
