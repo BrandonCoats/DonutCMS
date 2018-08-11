@@ -29,6 +29,7 @@
                  <div id="contents">
                  </div>  
                  <div id="images">
+                 <img id="image" src="" alt="image" />
                  </div>
                  <div id="config">
                 <select>
@@ -49,6 +50,7 @@
         <footer>---Copyright Donut CMS 2018---</footer>
       </div>
     </div>
-    <!--<script src="./Scripts/Edit.js"></script>-->
+    <script src="./Scripts/LoadPage.js"></script>
+    <script src="./Scripts/Edit.js"></script>
   </body>
 </html>
