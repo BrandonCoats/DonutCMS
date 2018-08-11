@@ -20,6 +20,7 @@ function loadComplete(evt) {
   data = JSON.parse(request.responseText);
   //data = request.responseText;
   user = data.user;
+  $_COOKIE['user'] = user;
   document.getElementById("res").innerHTML = "Results:";
   var resultBox = document.getElementById("results");
   resultBox.innerHTML = "";
