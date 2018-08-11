@@ -19,11 +19,12 @@
           <div class="outer">
               <div class="middle">
                   <div class="inner">
-                      <h2>Amish Butter.org</h2>
-                      <img class="images" src="./Images/amishButter.jpg" alt="superButter" />
-                      <p class='content'>We are a website all about advertising amish butter for. I know what you're thinking
-                         "How can the Amish have a website?" Well The entire site is run by those of us on rumspringa, so get rekt scrub!
-                      </p>
+                <form action="Save()">
+                </form>
+                 <div id="contents">
+                 </div>  
+                 <div id="images">
+                 </div>
                   </div>
               </div>
           </div>
@@ -32,5 +33,7 @@
         <footer>---Copyright Donut CMS 2018---</footer>
       </div>
     </div>
+    <script src="Edit.js"></script>
+
   </body>
 </html>
