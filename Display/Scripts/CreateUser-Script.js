@@ -1,10 +1,11 @@
 var data;
 var request = new XMLHttpRequest();
-
+import {createHash} from 'Salt&HashFE';
 
 function CreateAccount() {
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
+
+  //var username = document.getElementById("username").value;
+  var password = 'Password';//document.getElementById("password").value;
   var hash = createHash(password);
   
   //var search = 'http://localhost/class/movieAPI/search_results.php' + '?query=' + searchTerms;
@@ -17,6 +18,7 @@ function CreateAccount() {
 }
 
 function loadComplete(evt) {
+ 
   data = JSON.parse(request.responseText);
   //data = request.responseText;
   user = data.user;

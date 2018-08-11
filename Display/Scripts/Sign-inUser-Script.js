@@ -2,6 +2,7 @@ var data;
 var request = new XMLHttpRequest();
 
 
+import {createHash} from 'Salt&HashFE';
 function SignIn() {
   var username = document.getElementById("username").value;
   var passHash = createHash(document.getElementById("password").value);
