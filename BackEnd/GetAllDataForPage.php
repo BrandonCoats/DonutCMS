@@ -3,7 +3,7 @@
 //include database connection
 include 'dbconfig.php';
 //$mysqli->real_escape_string() function helps us prevent attacks such as SQL injection
-$query = "SELECT * FROM data";
+$query = "SELECT * FROM data where"."AND page LIKE '%".$mysqli->real_escape_string($_GET['page'])."%'";
        
 //echo $query;
 //execute the query

@@ -3,11 +3,11 @@
 //include database connection
 include 'dbconfig.php';
 //$mysqli->real_escape_string() function helps us prevent attacks such as SQL injection
-$query = "SELECT * FROM data where"."AND summary LIKE '%".$mysqli->real_escape_string($_GET['content'])."%'";
+$query = "SELECT * FROM data where"."AND page LIKE '%".$mysqli->real_escape_string($_GET['page'])."%'";
         
 if(isset($_GET['id']))
         {
-            $query .= "AND budget <= '".$mysqli->real_escape_string($_GET['budget'])."'";
+            $query .= "AND id <= '".$mysqli->real_escape_string($_GET['id'])."'";
         }
        
 //echo $query;
