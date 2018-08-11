@@ -24,13 +24,22 @@
                                 <p>Everything here is editable,go to town!Unfortunatly only two things are actually saved, the Content(The paragraph below), and the media(The picture)
                                     When you're done click the republish button below to change your page.
                                 </p>
-                              </div>
-                      <h2>The Story of John</h2>
-                      <img id="image" src="./Images/amishButter.jpg" alt="image" /><input type="file" name="chooser" accept="image/*"/>
-                      <p id='content'>We are a website all about advertising amish butter. I know what you're thinking
-                         "How can the Amish have a website?" Well The entire site is run by those of us on rumspringa, so get wrecked!(Also Some of us are lawyers for some reason.)
-                      </p>>
-                      <input type="submit" value="Publish">
+                        </div>
+                <form action="Save()">
+                 <div id="contents">
+                 </div>  
+                 <div id="images">
+                 </div>
+                 <div id="config">
+                <select>
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+                <option value="color">Color</option>
+                </select>
+                 </div>
+                 <input type="submit" value="Submit">
+                  </div>
+                </form>
                   </div>
               </div>
           </div>
@@ -40,6 +49,6 @@
         <footer>---Copyright Donut CMS 2018---</footer>
       </div>
     </div>
-    <script src="./Scripts/Edit.js"></script>
+    <!--<script src="./Scripts/Edit.js"></script>-->
   </body>
 </html>
