@@ -26,10 +26,9 @@ function Save()
     imgRequest.send();
 
 }
-function StoreImg()
-{
+
     document.querySelector('input[type="file"]').addEventListener('change', function() {
-        var filename = null;
+        
         if (this.files && this.files[0]) {
             filename = this.files[0];
             var img = document.querySelector('image');  // $('img')[0]
@@ -37,5 +36,3 @@ function StoreImg()
             img.onload = imageIsLoaded; // optional onload event listener
         }
     });
-   return filename;
-}
