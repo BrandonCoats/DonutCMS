@@ -6,46 +6,60 @@
 
 $result = $mysqli->query($insert);
 if($result === TRUE){
-    $query = "SELECT * FROM users where username LIKE '%".$mysqli->real_escape_string($_GET['username'])."%' AND password like '%".$mysqli->real_escape_string($_GET['password']).";
-}
-
-//echo $query;
-//execute the query
-if( $mysqli->query($query) ) {
-$result = $mysqli->query( $query );
-//get number of rows returned
-$num_results = $result->num_rows;
-if( $num_results > 0){ //it means there's already at least one database record
-
-//loop to show each records
-$numLeft = $num_results;
-if($numLeft == 1){
-extract($results);
-//creating new table row per record
-$myJson .= '{';
-    $myJson .= '"id":'.'"'.$id.'"'.',';
-    $myJson .= '"username":'.'"'.$username.'"'.',';
-    $myJson .= '"password":'.'"'.$password.'",';
-    $myJson .= '"isAdmin":'.'"'.$isAdmin.'"';
-    $myJson .= '}';
-    echo $myJson;
-}
+    $query = 'SELECT * FROM users where username LIKE "%'.$mysqli->real_escape_string($_GET['username']).'%" AND password like "%'.$mysqli->real_escape_string($_GET['password']).'%";';
 }
 else{
-$myJson ='{ "info": "Error: ['.$numLeft.'] results found."}';
+    $myJson = '{"info": "No results found"}';
+    echo $myJson;
 }
-
-}else{
-$myJson = '{"info": "No results found"}';
-echo $myJson;
-}
-$result->free();
-$mysqli->close();
-    exit();
-}else{
-    //if unable to create new record
-    echo "Database Error: Unable to retrieve records.";
-}
-//close database connection
-$mysqli->close();
-?>
+    //echo $query;
+    //execute the query
+    if( $mysqli->query($query) ) {
+     $Qresult = $mysqli->query( $query );
+    
+     $num_results = $Qresult->num_rows;
+     if( $num_results > 0){ //it means there's already at least one database record
+     
+         //loop to show each records
+         $numLeft = $num_results;
+         $myJson = '{"AllData": [';
+         while( $row = $Qresult->fetch_assoc() ){
+     
+             //this will make $row['firstname'] to
+             //just $firstname only
+             extract($row);
+             
+             //creating new table row per record
+             $myJson .= '{';
+                 $myJson .= '"id":"'.$id.'",';
+                 $myJson .= '"username":'.'"'.$username.'"'.',';
+                 $myJson .= '"password":'.'"'.$password.'"'.',';
+                 $myJson .= '"isAdmin":'.'"'.$isAdmin.'"'.',';
+                 $myJson .= '}';
+                 if($numLeft > 1)
+                 {
+                     $myJson .= ',';
+                 }
+                 else
+                 {
+                     $myJson .= ']}';
+                 }
+                 $numLeft = $numLeft - 1;
+         }
+         echo $myJson;
+     }else{
+         $myJson = '{"info": "No results found"}';
+             echo $myJson;
+     }
+     //disconnect from database
+     $result->free();
+     $mysqli->close();
+         exit();
+     }else{
+         //if unable to create new record
+         echo $query;
+         echo "Database Error: Unable to retrieve records.";
+     }
+     //close database connection
+     $mysqli->close();
+     ?>
