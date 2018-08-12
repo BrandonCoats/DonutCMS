@@ -18,9 +18,16 @@
             var user = JSON.parse(userJson);
             if(user.isAdmin)
             { 
-              <?php echo '<a href="EIndex.php">Edit</a>'?>
-            }
+              var adminOnly = document.getElementById("adminOnly");
+              adminOnly.visibility = "visible";
+            }  
           </script>
+          <div id="addedPages">
+          </div>
+          <div id="adminOnly">
+            <a href="EIndex.php">Edit</a>
+            <a href="AddPage.php">Add Page</a>
+          </div>
       </div>
       <div id="body">
           <div class="outer">

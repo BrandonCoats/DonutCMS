@@ -9,6 +9,10 @@ body {
     color: rgb(140, 140, 140);
 }
 
+.adminOnly {
+    visibility: hidden;
+}
+
 /* HEADER */
 #logo {
     display: inline;

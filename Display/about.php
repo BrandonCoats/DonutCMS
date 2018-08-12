@@ -30,7 +30,7 @@
           </script>
           <div id="addedPages">
           </div>
-          <div id="adminOnly" visiblitiy="hidden">
+          <div id="adminOnly">
             <a href="EAbout.php">Edit</a>
             <a href="AddPage.php">Add Page</a>
           </div>
