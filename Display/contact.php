@@ -39,23 +39,6 @@
       </div>
     </div>
     <script src="./Scripts/LoadPage.js"></script>
-    <script>
-            function read_cookie(name) {
-                var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
-                result && (result = JSON.parse(result[1]));
-                return result;
-            }
-            var userJson = read_cookie('user');
-            if(userJson !== null)
-            {
-              var welcome = document.getElementById("welcomeUser");
-              welcome.innerHTML = "Welcome "+ userJson.username +"!";
-              if(userJson.isAdmin)
-              { 
-                var adminOnly = document.getElementById("adminOnly");
-                adminOnly.style.visibility = "visible";
-              }
-            }
-          </script>
+    <script src="./Scripts/CheckIfUserIsAdmin.js"></script>
   </body>
 </html>

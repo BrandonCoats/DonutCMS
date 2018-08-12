@@ -13,6 +13,9 @@
           <a href="login.html">Log-in</a>
           <a href="about.php">About</a>
           <a href="contact.php">Contact</a>
+          <div id="displayUser">
+            <p id='welcomeUser'></p>
+          </div>
       </div>
       <div id="body">
           <form action="Save()">
@@ -53,5 +56,6 @@
     </div>
     <script src="./Scripts/LoadPage.js"></script>
     <script src="./Scripts/Edit.js"></script>
+    <script src="./Scripts/CheckUser.js"></script>
   </body>
 </html>

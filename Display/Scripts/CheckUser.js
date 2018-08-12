@@ -8,9 +8,5 @@ if(userJson !== null)
 {
 var welcome = document.getElementById("welcomeUser");
 welcome.innerHTML = "Welcome "+ userJson.username +"!";
-if(userJson.isAdmin)
-{ 
-  var adminOnly = document.getElementById("adminOnly");
-  adminOnly.style.visibility = "visible";
-}
+
 }
