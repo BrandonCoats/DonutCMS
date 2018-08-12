@@ -28,9 +28,21 @@ function Save()
 }
 function StoreImg(pathToFile)
 {
-    var split = pathToFile.split("/");
-    var imgName = split[split.length()-1];
-    var file = IO.newFile(imgName, pathToFile);
-    var dest = IO.newFile("*/Images", "");
-    file.copyTo(dest, imgName);
+   var preview = document.querySelector('image');
+   var file = document.querySelector('input[type=file]').files[0];
+   var reader = FileReader();
+   var split = pathToFile.split("/");
+   var filename = split[split.length -1];
+   reader.onloadend = function()
+   {
+       preview.src = reader.result;
+   }
+
+   if(file)
+   {
+       reader.readAsDataURL(file);
+   }
+   else{
+       preview.src = "";
+   }
 }
