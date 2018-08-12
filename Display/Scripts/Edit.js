@@ -28,22 +28,14 @@ function Save()
 }
 function StoreImg()
 {
-   var preview = document.querySelector('image');
-   var file = document.querySelector('input[type=file]').files[0];
-   var reader = FileReader();
-   var filename  = file.name;
-   
-   reader.onloadend = function()
-   {
-       preview.src = reader.result;
-   }
-
-   if(file)
-   {
-       reader.readAsDataURL(file);
-   }
-   else{
-       preview.src = "";
-   }
+    document.querySelector('input[type="file"]').addEventListener('change', function() {
+        var filename = null;
+        if (this.files && this.files[0]) {
+            filename = this.files[0];
+            var img = document.querySelector('image');  // $('img')[0]
+            img.src = URL.createObjectURL(this.files[0]); // set src to file url
+            img.onload = imageIsLoaded; // optional onload event listener
+        }
+    });
    return filename;
 }
