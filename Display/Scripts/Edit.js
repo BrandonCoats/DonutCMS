@@ -2,7 +2,7 @@ function Save()
 {//Actually makes the callls to save data from fields to database.
     var request = new XMLHttpRequest();
     var contentTerms = document.getElementById("content").value;
-    var page = document.getElementById("title");
+    var page = document.getElementById("title").innerHTML;
     console.log(contentTerms);
     console.log(page);
     
@@ -16,7 +16,6 @@ function Save()
     var imagespot = document.getElementById("image");
     var valEntered = document.getElementById("imageElm").value;
     imagespot.src = valEntered;
-    StoreImg();
     var imgRequest = new XMLHttpRequest();
     var imgSearch = 'http://localhost/class/DonutCms/CRUD/LoadImage.php' + '?page=' + page;
 
