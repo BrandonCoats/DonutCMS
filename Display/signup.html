@@ -14,9 +14,7 @@
                         return result;
                     }
                     var userJson = read_cookie('user');
-                    var user = JSON.parse(userJson);
-                    console.log(user);
-                    if(user !== null)
+                    if(userJson !== null)
                     {
                       var welcome = document.getElementById("welcomeUser");
                       welcome.innerHTML ="Welcome "+ user.username +"!";

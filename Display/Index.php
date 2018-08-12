@@ -15,12 +15,11 @@
           <a href="contact.php">Contact</a>
           <script>
             var userJson = sessionStorage.getItem("user");
-            var user = JSON.parse(userJson);
-            if(user !== null)
+            if(userJson !== null)
             {
               var welcome = document.getElementById("welcomeUser");
               welcome.innerHTML ="Welcome "+ user.username +"!";
-              if(user.isAdmin)
+              if(userJson.isAdmin)
               { 
                 var adminOnly = document.getElementById("adminOnly");
                 adminOnly.style.visibility = "visible";

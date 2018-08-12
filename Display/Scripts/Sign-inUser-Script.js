@@ -30,7 +30,7 @@ function loadComplete(evt) {
   console.log(data.AllData[0]);
   user = data.AllData[0];
   
-  bake_cookie("user", user.toString());
+  bake_cookie("user", user);
   document.getElementById("res").innerHTML = "Results:";
   var resultBox = document.getElementById("results");
   resultBox.innerHTML = "";
@@ -38,6 +38,6 @@ function loadComplete(evt) {
   }
 
   function bake_cookie(name, value) {
-    var cookie = 'name = "'+JSON.stringify(name)+'", value ="'+value+'",,  domain="'+window.location.host.toString()+'",  path=/;';
+    var cookie = name +' = '+JSON.stringify(value)+'; '+ "expires="+ new Date(new Date().getTime()+60*60*1000*24).toGMTString()+";path=/";
     document.cookie = cookie;
   }
