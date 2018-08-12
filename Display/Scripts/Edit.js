@@ -19,7 +19,7 @@ function Save()
     console.log(page);
     
     //var search = 'http://localhost/class/movieAPI/search_results.php' + '?query=' + searchTerms;
-    var search = 'http://10.10.16.191/DonutCMS/CRUD/UpdateData.php' + '?query=' + contentTerms + '&page=' + page;
+    var search = 'http://localhost/class/DonutCMS/CRUD/UpdateData.php' + '?query=' + contentTerms + '&page=' + page;
   
     console.log(search);
     request.open('PUT', search);

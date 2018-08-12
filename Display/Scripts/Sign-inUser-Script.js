@@ -16,7 +16,7 @@ function SignIn() {
   var passHash = document.getElementById("password").value;
   
   //var search = 'http://localhost/class/movieAPI/search_results.php' + '?query=' + searchTerms;
-  var search = 'http://pijpriem/DonutCMS/CRUD/GetSpecficUser.php' + '?username=' + username + '&password='+passHash;
+  var search = 'http://localhost/class/DonutCMS/CRUD/GetSpecficUser.php' + '?username=' + username + '&password='+passHash;
 
   console.log(search);
   request.open('GET', search);
@@ -27,8 +27,8 @@ function SignIn() {
 function loadComplete(evt) {
   data = JSON.parse(request.responseText);
   //data = request.responseText;
+  console.log(data);
   user = data.user;
-  $_COOKIE['user'] = user;
   document.getElementById("res").innerHTML = "Results:";
   var resultBox = document.getElementById("results");
   resultBox.innerHTML = "";
