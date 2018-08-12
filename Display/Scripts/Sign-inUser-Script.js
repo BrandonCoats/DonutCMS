@@ -29,9 +29,16 @@ function loadComplete(evt) {
   //data = request.responseText;
   console.log(data);
   user = data.user;
+  
+  bake_cookie("user", request.responseText);
   document.getElementById("res").innerHTML = "Results:";
   var resultBox = document.getElementById("results");
   resultBox.innerHTML = "";
   console.log(Movies);
   
+  }
+
+  function bake_cookie(name, value) {
+    var cookie = [name, '=', JSON.stringify(value), '; domain=.', window.location.host.toString(), '; path=/;'].join('');
+    document.cookie = cookie;
   }

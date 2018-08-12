@@ -14,13 +14,20 @@
           <a href="about.php">About</a>
           <a href="contact.php">Contact</a>
           <script>
-            var userJson = sessionStorage.getItem("user");
-            var user = JSON.parse(userJson);
-            if(user.isAdmin)
-            { 
-              <?php echo '<a href="EAbout.php">Edit</a>' ?>
+            function read_cookie(name) {
+                var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
+                result && (result = JSON.parse(result[1]));
+                return result;
             }
-        </script>
+            var userJson = read_cookie('user');
+            var user = JSON.parse(userJson);
+            console.log(user);
+            if(user.isAdmin === 1)
+            {
+              var editLink = document.getElementById("editLink");
+            }  
+          </script>
+          <a id='editLink' visibilit="hidden" href="EAbout.php">Edit</a>
       </div>
       <div id="body">
           <div class="outer">
