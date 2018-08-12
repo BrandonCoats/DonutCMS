@@ -45,4 +45,5 @@ function StoreImg()
    else{
        preview.src = "";
    }
+   return filename;
 }
