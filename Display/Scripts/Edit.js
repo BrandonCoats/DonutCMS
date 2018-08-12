@@ -11,7 +11,6 @@
 
 function Save()
 {//Actually makes the callls to save data from fields to database.
-    var data;
     var request = new XMLHttpRequest();
     var contentTerms = document.getElementById("content").value;
     var page = "edit";
@@ -23,9 +22,21 @@ function Save()
   
     console.log(search);
     request.open('PUT', search);
-    request.onload = loadComplete;
+    //request.onload = loadComplete;
     request.send();
-    
+    //start image process
+    var imagespot = document.getElementById("image");
+    var valEntered = document.getElementById("imageElm").value;
+    imagespot.src = valEntered;
+    StoreImg(pathToFile)
+    var imgRequest = new XMLHttpRequest();
+    var imgSearch = 'http://localhost/class/DonutCms/CRUD/LoadImage.php' + '?page=' + page;
+
+    console.log(imgSearch);
+    imgRequest.open('PUT', imgSearch);
+    //imgRequest.onload = imgLoadComplete;
+    imgRequest.send();
+
 }
 // window.setInterval(
 // function()
@@ -35,7 +46,7 @@ function Save()
 // , 5000);
 function StoreImg(pathToFile)
 {
-    var slipt = pathToFile.slipt("/");
+    var split = pathToFile.split("/");
     var imgName = split[split.length()-1];
     var file = IO.newFile(imgName, pathToFile);
     var dest = IO.newFile("*/Images", "");

@@ -30,6 +30,7 @@
                  </div>  
                  <div id="images">
                  <img id="image" src="" alt="image" />
+                 <input type="file" name="imageImp" id="imageElm"/>
                  </div>
                  <div id="config">
                 <select>
