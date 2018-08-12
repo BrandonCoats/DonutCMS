@@ -24,10 +24,16 @@
             console.log(user);
             if(user.isAdmin === 1)
             {
-              var editLink = document.getElementById("editLink");
+              var adminOnly = document.getElementById("adminOnly");
+              adminOnly.visibility = "visible";
             }  
           </script>
-          <a id='editLink' visibilit="hidden" href="EAbout.php">Edit</a>
+          <div id="addedPages">
+          </div>
+          <div id="adminOnly" visiblitiy="hidden">
+            <a href="EAbout.php">Edit</a>
+            <a href="AddPage.php">Add Page</a>
+          </div>
       </div>
       <div id="body">
           <div class="outer">
