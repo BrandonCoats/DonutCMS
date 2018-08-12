@@ -32,6 +32,5 @@ function loadComplete(evt) {
   document.getElementById("res").innerHTML = "Results:";
   var resultBox = document.getElementById("results");
   resultBox.innerHTML = "";
-  console.log(Movies);
   
   }
