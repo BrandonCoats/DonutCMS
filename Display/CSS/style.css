@@ -41,6 +41,10 @@ a:hover {
 }
 
 /* BODY */
+#contents {
+    color: rgb(140, 140, 140);
+}
+
 .outer {
     position: absolute;
     height: 90%;

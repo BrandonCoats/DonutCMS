@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <title>Home</title>
+  <title id="title">about</title>
       <link href='CSS/style.css', rel='stylesheet'>
   </head>
   <body>
