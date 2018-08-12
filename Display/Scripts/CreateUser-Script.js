@@ -1,24 +1,24 @@
 var data;
 var request = new XMLHttpRequest();
-var bcrypt = require("bcrypt-nodejs");
+// var bcrypt = require("bcrypt-nodejs");
 
-function createHash(enteredString) {
-    bcrypt.hash(enteredString, null, null, function(err, hash){
-        bcrypt.compare(enteredString, hash, function(err, res){
-            return (hash);
-        });
-    });
+// function createHash(enteredString) {
+//     bcrypt.hash(enteredString, null, null, function(err, hash){
+//         bcrypt.compare(enteredString, hash, function(err, res){
+//             return (hash);
+//         });
+//     });
     
-}
+// }
 
 function CreateAccount() {
 
   //var username = document.getElementById("username").value;
   var password = 'Password';//document.getElementById("password").value;
-  var hash = createHash(password);
+  //var hash = createHash(password);
   
   //var search = 'http://localhost/class/movieAPI/search_results.php' + '?query=' + searchTerms;
-  var search = 'http://10.10.16.191/DonutCMS/CRUD/AddUser.php' + '?username=' + username + '&passHash=' + hash;
+  var search = 'http://10.10.16.191/DonutCMS/CRUD/AddUser.php' + '?username=' + username + '&passHash=' + password;
 
   console.log(search);
   request.open('POST', search);
