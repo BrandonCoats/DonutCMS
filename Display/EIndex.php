@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <title id="title">edit</title>
-      <link href='CSS/color.css', rel='stylesheet'>
+      <title id="title">index</title>
+      <link href='CSS/light.css' rel='stylesheet'>
   </head>
   <body>
     <div class="container">
@@ -18,7 +18,6 @@
           </div>
       </div>
       <div id="body">
-          <form action="Save()">
           <div class="outer">
               <div class="middle">
                   <div class="inner">
@@ -28,9 +27,8 @@
                                     When you're done click the republish button below to change your page.
                                 </p>
                         </div>
-                <form action="Save()">
-                 <div id="contents">
-                 </div>  
+               
+                 <input type="text" id="content" value="Eat me" />
                  <div id="images">
                  <img id="image" src="" alt="image" />
                  <input type="file" name="imageImp" id="imageElm"/>
@@ -42,20 +40,16 @@
                 <option value="color">Color</option>
                 </select>
                  </div>
-                 <input type="submit" value="Submit">
+                 <button onclick="Save()">Publish Changes</button>
                   </div>
-                </form>
                   </div>
               </div>
           </div>
-        </form>
       </div>
-      <div class="footer">
-        <footer>---Copyright Donut CMS 2018---</footer>
-      </div>
+     
     </div>
-    <script src="./Scripts/LoadPage.js"></script>
-    <script src="./Scripts/Edit.js"></script>
-    <script src="./Scripts/CheckUser.js"></script>
+    <script type="text/javascript" src="./Scripts/LoadPage.js"></script>
+    <script type="text/javascript" src="./Scripts/Edit.js"></script>
+    <script type="text/javascript" src="./Scripts/CheckUser.js"></script>
   </body>
 </html>

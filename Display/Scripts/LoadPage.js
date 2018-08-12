@@ -40,6 +40,6 @@ function loadComplete(evt) {
   console.log(data);
   console.log(data.AllData[0].content);
   var loadedCon = data.AllData[0].content;
-  var con = document.getElementById("contents");
-  con.innerHTML = loadedCon;
+  var con = document.getElementById("content");
+  con.value = loadedCon;
   }
