@@ -13,11 +13,9 @@
           <a href="login.html">Log-in</a>
           <a href="about.php">About</a>
           <a href="contact.php">Contact</a>
+          <a id="adminOnly" href="EAbout.php">Edit</a>
+          <a id="adminOnly" href="AddPage.php">Add Page</a>
           <div id="addedPages">
-          </div>
-          <div id="adminOnly">
-            <a href="EAbout.php">Edit</a>
-            <a href="AddPage.php">Add Page</a>
           </div>
           <div id="displayUser">
             <p id='welcomeUser'></p>
