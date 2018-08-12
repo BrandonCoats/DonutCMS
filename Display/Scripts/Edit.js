@@ -16,7 +16,7 @@ function Save()
     var imagespot = document.getElementById("image");
     var valEntered = document.getElementById("imageElm").value;
     imagespot.src = valEntered;
-    StoreImg(pathToFile)
+    StoreImg();
     var imgRequest = new XMLHttpRequest();
     var imgSearch = 'http://localhost/class/DonutCms/CRUD/LoadImage.php' + '?page=' + page;
 
@@ -26,13 +26,13 @@ function Save()
     imgRequest.send();
 
 }
-function StoreImg(pathToFile)
+function StoreImg()
 {
    var preview = document.querySelector('image');
    var file = document.querySelector('input[type=file]').files[0];
    var reader = FileReader();
-   var split = pathToFile.split("/");
-   var filename = split[split.length -1];
+   var filename  = file.name;
+   
    reader.onloadend = function()
    {
        preview.src = reader.result;
