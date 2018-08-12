@@ -4,15 +4,15 @@
 
     $insert = "Insert into data(page, content) values (".$mysqli->real_escape_string($_GET['page']).", ".$mysqli->real_escape_string($_GET['content']).")";
 
-$result = $mysqli->exec($insert);
-echo $result;
+$result = $mysqli->query($insert);
+if($result === null){
 //disconnect from database
 $result->free();
 $mysqli->close();
     exit();
 }else{
     //if unable to create new record
-    echo $query;
+    echo $result;
     echo "Database Error: Unable to retrieve records.";
 }
 //close database connection

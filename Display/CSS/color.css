@@ -9,6 +9,10 @@ body {
     color: lightgray;
 }
 
+#adminOnly {
+    visibility: hidden;
+}
+
 /* HEADER */
 #logo {
     display: inline;

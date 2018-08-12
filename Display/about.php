@@ -14,13 +14,34 @@
           <a href="about.php">About</a>
           <a href="contact.php">Contact</a>
           <script>
-            var userJson = sessionStorage.getItem("user");
-            var user = JSON.parse(userJson);
-            if(user.isAdmin)
-            { 
-              <?php echo '<a href="EAbout.php">Edit</a>'?>
+            function read_cookie(name) {
+                var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
+                result && (result = JSON.parse(result[1]));
+                return result;
             }
-        </script>
+            var userJson = read_cookie('user');
+            var user = JSON.parse(userJson);
+            console.log(user);
+            if(user !== null)
+            {
+              var welcome = document.getElementById("welcomeUser");
+              welcome.innerHTML ="Welcome "+ user.username +"!";
+              if(user.isAdmin)
+              { 
+                var adminOnly = document.getElementById("adminOnly");
+                adminOnly.style.visibility = "visible";
+              }
+            }
+          </script>
+          <div id="addedPages">
+          </div>
+          <div id="adminOnly">
+            <a href="EAbout.php">Edit</a>
+            <a href="AddPage.php">Add Page</a>
+          </div>
+          <div id="displayUser">
+            <p id='welcomeUser'></p>
+          </div>
       </div>
       <div id="body">
           <div class="outer">

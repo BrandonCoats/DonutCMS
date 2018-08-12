@@ -7,28 +7,46 @@
   <body>
     <div class="container">
       <div id="nav">
+            <script>
+                    function read_cookie(name) {
+                        var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
+                        result && (result = JSON.parse(result[1]));
+                        return result;
+                    }
+                    var userJson = read_cookie('user');
+                    var user = JSON.parse(userJson);
+                    console.log(user);
+                    if(user !== null)
+                    {
+                      var welcome = document.getElementById("welcomeUser");
+                      welcome.innerHTML ="Welcome "+ user.username +"!";
+                    }
+                  </script>
           <h1 id="logo"><a href="index.php">Donut CMS</a></h1>
           <img id="donut" src="Images/donut.png">
           <a href="signup.html">Sign-up</a>
           <a href="login.html">Log-in</a>
           <a href="about.php">About</a>
           <a href="contact.php">Contact</a>
+          <div id="displayUser">
+                <p id='welcomeUser'></p>
+          </div>
       </div>
       <div id="body">
           <div class="outer">
               <div class="middle">
                   <div class="inner">
                       <h1>Sign-up</h1>
-                      <form onsubmit="CreateAccount()">
+                      <form>
                             <div class="form-container">
                                 <p>Please fill in this form to create an account.</p>
                                 <hr>
                             
                                 <label for="Username"><b>Username</b></label>
-                                <input type="text" placeholder="Enter Username" name="username" required>
+                                <input type="text" placeholder="Enter Username" name="username" id='username' required>
                                 <br/>
                                 <label for="psw"><b>Password</b></label>
-                                <input type="password" placeholder="Enter Password" name="password" required>
+                                <input type="password" placeholder="Enter Password" id='password' name="password" required>
                                 <br/>
                                 <label for="psw-repeat"><b>Repeat Password</b></label>
                                 <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
@@ -40,7 +58,7 @@
                                 <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
                             
                                 <div class="clearfix">
-                                    <button type="submit" class="signupbtn">Sign Up</button>
+                                    <button class="signupbtn" onclick="CreateAccount()">Sign Up</button>
                                 </div>
                             </div>
                           </form>
