@@ -25,7 +25,7 @@
             if(user.isAdmin === 1)
             {
               var adminOnly = document.getElementById("adminOnly");
-              adminOnly.visibility = "visible";
+              adminOnly.style.visibility = "visible";
             }  
           </script>
           <div id="addedPages">
