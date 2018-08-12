@@ -9,7 +9,7 @@ body {
     color: gray;
 }
 
-.adminOnly {
+#adminOnly {
     visibility: hidden;
 }
 
