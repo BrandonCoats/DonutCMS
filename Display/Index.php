@@ -28,7 +28,7 @@
               <div class="middle">
                 <div class="inner">
                 <img id="image" src="./Images/GlazedDonut.png" alt="image" />
-                <div id="contents">
+                <div id="content">
                 </div>  
               </div>
           </div>

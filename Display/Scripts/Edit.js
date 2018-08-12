@@ -1,7 +1,7 @@
 function Save()
 {//Actually makes the callls to save data from fields to database.
     var request = new XMLHttpRequest();
-    var contentTerms = document.getElementById("contents").value;
+    var contentTerms = document.getElementById("content").value;
     var page = document.getElementById("title");
     console.log(contentTerms);
     console.log(page);
