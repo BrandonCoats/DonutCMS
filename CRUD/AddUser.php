@@ -6,7 +6,7 @@
 
 $result = $mysqli->query($insert);
 if($result === TRUE){
-    $query = 'SELECT * FROM users where username LIKE "%'.$mysqli->real_escape_string($_GET['username']).'%" AND password like "%'.$mysqli->real_escape_string($_GET['password']).'%";';
+    $query = 'SELECT * FROM users where username LIKE "%'.$mysqli->real_escape_string($_GET['username']).'%" AND password like "%'.$mysqli->real_escape_string($_GET['passHash']).'%";';
 }
 else{
     $myJson = '{"info": "No results found"}';
@@ -34,7 +34,7 @@ else{
                  $myJson .= '"id":"'.$id.'",';
                  $myJson .= '"username":'.'"'.$username.'"'.',';
                  $myJson .= '"password":'.'"'.$password.'"'.',';
-                 $myJson .= '"isAdmin":'.'"'.$isAdmin.'"'.',';
+                 $myJson .= '"isAdmin":'.'"'.$isAdmin.'"';
                  $myJson .= '}';
                  if($numLeft > 1)
                  {
@@ -52,7 +52,7 @@ else{
              echo $myJson;
      }
      //disconnect from database
-     $result->free();
+     $QResult->free();
      $mysqli->close();
          exit();
      }else{

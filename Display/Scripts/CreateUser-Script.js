@@ -30,7 +30,7 @@ function loadComplete(evt) {
   data = JSON.parse(request.responseText);
   //data = request.responseText;
   console.log(data);
-  user = data.user;
+  user = data.AllData[0];
   bake_cookie("user", request.responseText);
   document.getElementById("res").innerHTML = "Results:";
   var resultBox = document.getElementById("results");

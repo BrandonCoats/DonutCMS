@@ -27,8 +27,8 @@ function SignIn() {
 function loadComplete(evt) {
   data = JSON.parse(request.responseText);
   //data = request.responseText;
-  console.log(data);
-  user = data.user;
+  console.log(data.AllData[0]);
+  user = data.AllData[0];
   
   bake_cookie("user", request.responseText);
   document.getElementById("res").innerHTML = "Results:";

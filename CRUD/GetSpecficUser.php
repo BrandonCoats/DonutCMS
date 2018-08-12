@@ -27,7 +27,7 @@ if( $mysqli->query($query) ) {
              $myJson .= '"id":"'.$id.'",';
              $myJson .= '"username":'.'"'.$username.'"'.',';
              $myJson .= '"password":'.'"'.$password.'"'.',';
-             $myJson .= '"isAdmin":'.'"'.$isAdmin.'"'.',';
+             $myJson .= '"isAdmin":'.'"'.$isAdmin.'"';
              $myJson .= '}';
              if($numLeft > 1)
              {
