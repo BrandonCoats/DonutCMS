@@ -18,7 +18,7 @@
             var user = JSON.parse(userJson);
             if(user.isAdmin)
             { 
-              <?php echo '<a href="EAbout.php">Edit</a>'?>
+              <?php echo '<a href="EAbout.php">Edit</a>' ?>
             }
         </script>
       </div>

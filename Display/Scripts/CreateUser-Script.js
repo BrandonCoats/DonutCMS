@@ -13,8 +13,8 @@ var request = new XMLHttpRequest();
 
 function CreateAccount() {
 
-  //var username = document.getElementById("username").value;
-  var password = 'Password';//document.getElementById("password").value;
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
   //var hash = createHash(password);
   
   //var search = 'http://localhost/class/movieAPI/search_results.php' + '?query=' + searchTerms;

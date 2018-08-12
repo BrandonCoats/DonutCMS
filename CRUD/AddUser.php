@@ -5,7 +5,7 @@
     $insert = "Insert into users(username, password, isAdmin) values (".$mysqli->real_escape_string($_GET['username']).", ".$mysqli->real_escape_string($_GET['password']).", 0)";
 
 $result = $mysqli->exec($insert);
-echo $result;
+//echo $result;
 //disconnect from database
 $result->free();
 $mysqli->close();
