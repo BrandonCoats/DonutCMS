@@ -1,25 +1,13 @@
-// javascript:document.body.contentEditable='true'; 
-// document.designMode='on'; void 0
-//The above code creates the illusion of constant updates for the user
-// function setValues()
-// {//actually provides functionality for updating 
-// var contentData = document.getElementById("content").innerHTML;
-// var imageData = document.getElementById("image").innerHTML;
-// console.log(contentData);
-// console.log(imageData);
-// }
-
 function Save()
 {//Actually makes the callls to save data from fields to database.
     var request = new XMLHttpRequest();
-    var contentTerms = document.getElementById("content").value;
-    var page = "edit";
+    var contentTerms = document.getElementById("contents").value;
+    var page = document.getElementById("title");
     console.log(contentTerms);
     console.log(page);
     
     //var search = 'http://localhost/class/movieAPI/search_results.php' + '?query=' + searchTerms;
     var search = 'http://localhost/class/DonutCMS/CRUD/UpdateData.php' + '?query=' + contentTerms + '&page=' + page;
-  
     console.log(search);
     request.open('PUT', search);
     //request.onload = loadComplete;
@@ -38,12 +26,6 @@ function Save()
     imgRequest.send();
 
 }
-// window.setInterval(
-// function()
-// {
-//    setValues();
-// }
-// , 5000);
 function StoreImg(pathToFile)
 {
     var split = pathToFile.split("/");

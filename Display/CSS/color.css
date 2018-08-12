@@ -45,6 +45,10 @@ a:hover {
 }
 
 /* BODY */
+#contents {
+    color: lightgray;
+}
+
 .outer {
     position: absolute;
     height: 90%;
