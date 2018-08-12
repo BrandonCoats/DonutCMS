@@ -16,10 +16,15 @@
           <script>
           var userJson = sessionStorage.getItem("user");
             var user = JSON.parse(userJson);
-            if(user.isAdmin)
-            { 
-              var adminOnly = document.getElementById("adminOnly");
-              adminOnly.style.visibility = "visible";
+            if(user !== null)
+            {
+              var welcome = document.getElementById("welcomeUser");
+              welcome.innerHTML ="Welcome "+ user.username +"!";
+              if(user.isAdmin)
+              { 
+                var adminOnly = document.getElementById("adminOnly");
+                adminOnly.style.visibility = "visible";
+              }
             }  
           </script>
           <div id="addedPages">
@@ -27,6 +32,9 @@
           <div id="adminOnly">
             <a href="EContact.php">Edit</a>
             <a href="AddPage.php">Add Page</a>
+          </div>
+          <div id="displayUser">
+            <p id='welcomeUser'></p>
           </div>
       </div>
       <div id="body">

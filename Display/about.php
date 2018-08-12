@@ -22,17 +22,25 @@
             var userJson = read_cookie('user');
             var user = JSON.parse(userJson);
             console.log(user);
-            if(user.isAdmin === 1)
+            if(user !== null)
             {
-              var adminOnly = document.getElementById("adminOnly");
-              adminOnly.style.visibility = "visible";
-            }  
+              var welcome = document.getElementById("welcomeUser");
+              welcome.innerHTML ="Welcome "+ user.username +"!";
+              if(user.isAdmin)
+              { 
+                var adminOnly = document.getElementById("adminOnly");
+                adminOnly.style.visibility = "visible";
+              }
+            }
           </script>
           <div id="addedPages">
           </div>
           <div id="adminOnly">
             <a href="EAbout.php">Edit</a>
             <a href="AddPage.php">Add Page</a>
+          </div>
+          <div id="displayUser">
+            <p id='welcomeUser'></p>
           </div>
       </div>
       <div id="body">

@@ -8,12 +8,30 @@
   <body>
     <div class="container">
       <div id="nav">
+          <script>
+              function read_cookie(name) {
+                  var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
+                  result && (result = JSON.parse(result[1]));
+                  return result;
+              }
+              var userJson = read_cookie('user');
+              var user = JSON.parse(userJson);
+              console.log(user);
+              if(user !== null)
+              {
+                var welcome = document.getElementById("welcomeUser");
+                welcome.innerHTML ="Welcome "+ user.username +"!";
+              }
+            </script>
           <h1 id="logo"><a href="index.php">Donut CMS</a></h1>
           <img id="donut" src="Images/donut.png">
           <a href="signup.html">Sign-up</a>
           <a href="login.html">Log-in</a>
           <a href="about.php">About</a>
           <a href="contact.php">Contact</a>
+          <div id="displayUser">
+              <p id='welcomeUser'></p>
+            </div>
       </div>
       <div id="body">
           <div class="outer">
