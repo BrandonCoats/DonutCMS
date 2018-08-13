@@ -21,6 +21,7 @@ function loadComplete(evt) {
   data = JSON.parse(request.responseText);
   //data = request.responseText;
   data = data.AllData[0].page;
-  
-  
-  }
+  var file = fs.createReadStream("./Generic.php");
+  var newFile = fs.createWriteStream('./'+AllData[0].page);
+  file.pipe(newFile);
+}
