@@ -2,14 +2,13 @@ var data;
 var request = new XMLHttpRequest();
 
 
-function AddPage() {
+function AddPage(pageName) {
   var contentTerms = document.getElementById("content").value;
-  var page = document.getElementById("page").value;
   console.log(contentTerms);
   console.log(page);
   
   //var search = 'http://localhost/class/movieAPI/search_results.php' + '?query=' + searchTerms;
-  var search = 'http://localhost/class/DonutCMS/CRUD/AddPage.php' + '?page=' + page;
+  var search = 'http://localhost/class/DonutCMS/CRUD/AddPage.php' + '?page=' + pageName;
 
   console.log(search);
   request.open('POST', search);

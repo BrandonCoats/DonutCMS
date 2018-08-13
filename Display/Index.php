@@ -17,9 +17,10 @@
           <a id="adminOnly" href='?addpage=true'>Add Page</a>
           
           <?php
+             
             //prompt function
             function prompt($prompt_msg){
-                echo("<script type='text/javascript'> var answer = prompt('".$prompt_msg."'); </script>");
+                echo("<script type='text/javascript'> var answer = prompt('".$prompt_msg."'); </script> <script type='text/javascript' src='.js'></script>");
 
                 $answer = "<script type='text/javascript'> document.write(answer); </script>";
                 return($answer);
@@ -33,6 +34,7 @@
             }
             if (isset($_GET['addpage'])) {
               runMyFunction();
+              AddPage($name);
             }
           ?>
 
