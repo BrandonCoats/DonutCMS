@@ -3,7 +3,7 @@
 //include database connection
 include 'dbconfig.php';
 //$mysqli->real_escape_string() function helps us prevent attacks such as SQL injection
-$query = "SELECT * FROM image where"."AND page LIKE '%".$mysqli->real_escape_string($_GET['page'])."%'";
+$query = "SELECT * FROM pages";
        
 //echo $query;
 //execute the query
@@ -25,8 +25,7 @@ if( $num_results > 0){ //it means there's already at least one database record
         //creating new table row per record
         $myJson .= '{';
             $myJson .= '"id":'.'"'.$id.'"'.',';
-            $myJson .= '"page":'.'"'.$page.'"'.',';
-            $myJson .= '"path":'.'"'.$path.'"';
+            $myJson .= '"page":'.'"'.$page.'"';
             $myJson .= '}';
             if($numLeft > 1)
             {

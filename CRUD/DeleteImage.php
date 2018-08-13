@@ -5,7 +5,7 @@
     $delete = "Delete from Image where id = ".$mysqli->real_escape_string($_GET['id']);
 
 $result = $mysqli->exec($delete);
-echo $result;
+if($result === TRUE){
 //disconnect from database
 $result->free();
 $mysqli->close();

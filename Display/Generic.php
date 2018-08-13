@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
       <title id="title">index</title>
-      <link href='CSS/style.css', rel='stylesheet'>
+      <link href='CSS/light.css', rel='stylesheet'>
   </head>
   <body>
     <div class="container">
@@ -13,33 +13,8 @@
           <a href="login.html">Log-in</a>
           <a href="about.php">About</a>
           <a href="contact.php">Contact</a>
-          <a id="adminOnly" href="EAbout.php">Edit</a>
-          <a id="adminOnly" href='?addpage=true'>Add Page</a>
-          
-          <?php
-             
-            //prompt function
-            function prompt($prompt_msg){
-                echo("<script type='text/javascript'> var answer = prompt('".$prompt_msg."'); </script> <script type='text/javascript' src='.js'></script>");
-
-                $answer = "<script type='text/javascript'> document.write(answer); </script>";
-                return($answer);
-            }
-
-            function runMyFunction() {
-              //program
-              $prompt_msg = "Page Name:";
-              $name = prompt($prompt_msg);
-
-            }
-            if (isset($_GET['addpage'])) {
-              runMyFunction();
-              AddPage($name);
-            }
-          ?>
-
-          <div id="addedPages">
-          </div>
+          <a id="adminOnly" href="EGeneric.php">Edit</a>
+          <a id="adminOnly" href="AddPage.php">Add Page</a>
           <div id="displayUser">
             <p id='welcomeUser'></p>
           </div>
@@ -48,7 +23,8 @@
           <div class="outer">
               <div class="middle">
                 <div class="inner">
-                <div id="contents">
+                <img id="image" src="./Images/GlazedDonut.png" alt="image" />
+                <div id="content">
                 </div>  
               </div>
           </div>

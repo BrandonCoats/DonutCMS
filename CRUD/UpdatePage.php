@@ -2,17 +2,19 @@
     header("Access-Control-Allow-Origin: *");
     include 'dbconfig.php';
 
-    $delete = "Delete from data where id = ".$mysqli->real_escape_string($_GET['id']);
+    $update = 'Update page set page = "'.$mysqli->real_escape_string($_GET['page']).'" where id = "'.$mysqli->real_escape_string($_GET['id']).'";';
 
-$result = $mysqli->exec($delete);
-if($result === TRUE){
+    //echo "{ 'info': ".$update."}"
+ 
+// echo $result
+$result = $mysqli->query($update);
+
+if(mysqli_query($mysqli, $update) === TRUE){
 //disconnect from database
-$result->free();
 $mysqli->close();
     exit();
 }else{
     //if unable to create new record
-    echo $query;
     echo "Database Error: Unable to retrieve records.";
 }
 //close database connection
