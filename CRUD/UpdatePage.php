@@ -2,7 +2,7 @@
     header("Access-Control-Allow-Origin: *");
     include 'dbconfig.php';
 
-    $update = 'Update page set page = "'.$mysqli->real_escape_string($_GET['page']).'" where id = "'.$mysqli->real_escape_string($_GET['id']).'";';
+    $update = 'Update webpage set page = "'.$mysqli->real_escape_string($_GET['page']).'" where id = "'.$mysqli->real_escape_string($_GET['id']).'";';
 
     //echo "{ 'info': ".$update."}"
  

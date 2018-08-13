@@ -3,7 +3,7 @@
 //include database connection
 include 'dbconfig.php';
 //$mysqli->real_escape_string() function helps us prevent attacks such as SQL injection
-$query = "SELECT * FROM pages";
+$query = "SELECT * FROM webpages";
        
 //echo $query;
 //execute the query

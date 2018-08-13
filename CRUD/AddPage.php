@@ -2,12 +2,12 @@
     header("Access-Control-Allow-Origin: *");
     include 'dbconfig.php';
 
-    $insert = 'Insert into pages(page) values ("'.$mysqli->real_escape_string($_GET['page']).'")';
+    $insert = 'Insert into webpages(page) values ("'.$mysqli->real_escape_string($_GET['page']).'")';
 
 $result = $mysqli->query($insert);
 
 if($result === TRUE){
-    $query = 'SELECT * FROM pages where page LIKE "%'.$mysqli->real_escape_string($_GET['page']).'%"';
+    $query = 'SELECT * FROM webpages where page LIKE "%'.$mysqli->real_escape_string($_GET['page']).'%"';
 }
 else{
     $myJson = '{"info": "No results found"}';
