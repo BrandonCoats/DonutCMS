@@ -13,7 +13,7 @@
           <a href="login.html">Log-in</a>
           <a href="about.php">About</a>
           <a href="contact.php">Contact</a>
-          <a id="adminOnly" href="EAbout.php">Edit</a>
+          <a id="adminOnly" href="EGeneric.php">Edit</a>
           <a id="adminOnly" href="AddPage.php">Add Page</a>
           <div id="displayUser">
             <p id='welcomeUser'></p>
