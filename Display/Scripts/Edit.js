@@ -15,6 +15,8 @@ function Save()
     //start image process
     var imagespot = document.getElementById("image");
     var valEntered = document.getElementById("imageElm").value;
+    console.log(valEntered);
+    StoreImg(valEntered);
     imagespot.src = valEntered;
     var imgRequest = new XMLHttpRequest();
     var imgSearch = 'http://localhost/class/DonutCms/CRUD/LoadImage.php' + '?page=' + page;
@@ -26,16 +28,29 @@ function Save()
 
 }
 
-window.addEventListener('load', function() {
-    document.querySelector('input[name="imageImp"]').addEventListener('change', function() {
-        
-        if (this.files && this.files[0]) {
-            filename = this.files[0];
-            var img = document.querySelector('img');  // $('img')[0]
-            img.src = URL.createObjectURL(this.files[0]); // set src to file url
-            img.onload = imageIsLoaded; // optional onload event listener
-        }
-    });
-});
+function StoreImg(pathToFile)
+{
+    var split = pathToFile.split("/");
+    var imgName = split[split.length-1];
+    var file = IO.newFile(imgName, pathToFile);
+    var dest = IO.newFile("*/Images", "");
+    file.copyTo(dest, imgName);
+   var preview = document.querySelector('image');
+   var file = document.querySelector('input[type=file]').files[0];
+   var reader = FileReader();
+   var split = pathToFile.split("/");
+   var filename = split[split.length -1];
+   reader.onloadend = function()
+   {
+       preview.src = reader.result;
+   }
 
-function imageIsLoaded(e) { alert(e); }
+   if(file)
+   {
+       reader.readAsDataURL(file);
+   }
+   else{
+       preview.src = "";
+   }
+}
+
