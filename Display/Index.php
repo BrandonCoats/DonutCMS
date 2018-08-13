@@ -2,7 +2,9 @@
 <html lang="en">
   <head>
       <title id="title">index</title>
-      <link href='CSS/style.css', rel='stylesheet'>
+      <div id="style">
+      
+      </div>
   </head>
   <body>
     <div class="container">
@@ -13,7 +15,7 @@
           <a href="login.html">Log-in</a>
           <a href="about.php">About</a>
           <a href="contact.php">Contact</a>
-          <a id="adminOnly" href="EAbout.php">Edit</a>
+          <a id="adminOnly" href="EIndex.php">Edit</a>
           <a id="adminOnly" href='?addpage=true'>Add Page</a>
           
           <?php
@@ -55,7 +57,13 @@
           </div>
       </div>
       <div class="footer">
-        <footer>---Copyright Donut CMS 2018---</footer>
+        <footer>---Copyright Donut CMS 2018---
+          <select id="select" onclick="ChangeTheme()">
+          <option value="light" selected>Light</option>
+          <option value="dark">Dark</option>
+          <option value="color">Color</option>
+          </select>
+        </footer>
       </div>
     </div>
 

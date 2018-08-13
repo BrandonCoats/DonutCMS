@@ -2,7 +2,9 @@
 <html lang="en">
   <head>
       <title id="title">contact</title>
-      <link href='CSS/style.css', rel='stylesheet'>
+      <div id="style">
+      
+      </div>
   </head>
   <body>
     <div class="container">
@@ -26,14 +28,20 @@
               <div class="middle">
                   <div class="inner">
                   <img id="image" src="./Images/GlazedDonut.png" alt="image">
-                  <div id="contents">
+                  <div id="content">
                   </div>
                   </div>
               </div>
           </div>
       </div>
       <div class="footer">
-        <footer>---Copyright Donut CMS 2018---</footer>
+        <footer>---Copyright Donut CMS 2018---
+        <select id="select" onclick="ChangeTheme()">
+          <option value="light" selected>Light</option>
+          <option value="dark">Dark</option>
+          <option value="color">Color</option>
+          </select>
+        </footer>
       </div>
     </div>
     <script src="./Scripts/LoadPage.js"></script>

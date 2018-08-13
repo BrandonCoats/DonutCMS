@@ -1,10 +1,25 @@
 var data;
 var request = new XMLHttpRequest();
-var imgData;
-var imgRequest = new XMLHttpRequest();
 window.onload = function(){
     LoadPage();
+    ChangeTheme();
 }
+function ChangeTheme(){
+    var e = document.getElementById("select");
+    var selected = e.options[e.selectedIndex].value;
+    var styles = document.getElementById("style");
+    console.log(selected);
+        if(selected == "light")
+        {
+            styles.innerHTML = "<link href='CSS/light.css' rel='stylesheet'>";
+        }else if(selected == "dark")
+        {
+            styles.innerHTML = "<link href='CSS/style.css' rel='stylesheet'>";
+        }else
+        {
+            styles.innerHTML = "<link href='CSS/color.css' rel='stylesheet'>";
+        }
+    }
 function LoadPage() {
   var page = document.getElementById("title").innerHTML;
   console.log(page);
@@ -15,31 +30,22 @@ function LoadPage() {
   request.open('POST', search);
   request.onload = loadComplete;
   request.send();
-
- //start loading img file
-  var imgSearch = 'http://localhost/class/DonutCms/CRUD/LoadImage.php' + '?page=' + page;
-
-  console.log(imgSearch);
-  imgRequest.open('POST', imgSearch);
-  imgRequest.onload = imgLoadComplete;
-  imgRequest.send();
-
 }
-function imgLoadComplete(evt) {
-    imgData = JSON.parse(imgRequest.responseText);
-    //data = request.responseText;
-    console.log(imgData);
-    console.log(imgData.AllData[0].path);
-    var loadedimage = imgData.AllData[0].path;
-    var img = document.getElementById("image");
-    img.src = loadedimage;
-}
-function loadComplete(evt) {
+function loadComplete(evt) 
+{
   data = JSON.parse(request.responseText);
   //data = request.responseText;
   console.log(data);
   console.log(data.AllData[0].content);
   var loadedCon = data.AllData[0].content;
   var con = document.getElementById("content");
-  con.value = loadedCon;
+  if(con.value == null)
+  {//for non editable pages
+    con.innerHTML = loadedCon;
+    console.log(loadedCon);
+  }
+  else
+  {//for editable pages
+    con.value = loadedCon;
+  }
   }
