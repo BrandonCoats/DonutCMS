@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 11, 2018 at 11:51 PM
+-- Generation Time: Aug 13, 2018 at 04:14 PM
 -- Server version: 5.7.21
 -- PHP Version: 5.6.35
 
@@ -30,20 +30,22 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `data`;
 CREATE TABLE IF NOT EXISTS `data` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `page` text NOT NULL,
   `content` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+  `page_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fkIdx_134` (`page_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `data`
 --
 
-INSERT INTO `data` (`id`, `page`, `content`) VALUES
-(3, 'contact', 'This is the content for cotact'),
-(4, 'about', 'This is the content for the about page'),
-(2, 'index', 'This is the test of the content load for the page');
+INSERT INTO `data` (`id`, `page`, `content`, `page_id`) VALUES
+(1, 'index', 'Test text', 1),
+(2, 'contact', 'test text', 2),
+(3, 'about', 'Eat me', 3);
 
 -- --------------------------------------------------------
 
@@ -53,20 +55,22 @@ INSERT INTO `data` (`id`, `page`, `content`) VALUES
 
 DROP TABLE IF EXISTS `image`;
 CREATE TABLE IF NOT EXISTS `image` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `page` text NOT NULL,
+  `id` int(11) NOT NULL,
   `path` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+  `page_id` int(11) NOT NULL,
+  `page` text NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fkIdx_138` (`page_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `image`
 --
 
-INSERT INTO `image` (`id`, `page`, `path`) VALUES
-(2, 'index', './Images/John.jpg'),
-(3, 'contact', './Images/GlazedDonut.png'),
-(4, 'about', './Images/GlazedDonut.png');
+INSERT INTO `image` (`id`, `path`, `page_id`, `page`) VALUES
+(1, './Images/John.jpg', 1, 'index'),
+(2, './Images/GlazedDonut.png', 2, 'contact'),
+(3, './Images/GlazedDonut.png', 3, 'about');
 
 -- --------------------------------------------------------
 
@@ -81,7 +85,36 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` text NOT NULL,
   `isAdmin` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `isAdmin`) VALUES
+(1, 'james', '123', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `webpages`
+--
+
+DROP TABLE IF EXISTS `webpages`;
+CREATE TABLE IF NOT EXISTS `webpages` (
+  `page` text NOT NULL,
+  `page_id` int(11) NOT NULL,
+  PRIMARY KEY (`page_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `webpages`
+--
+
+INSERT INTO `webpages` (`page`, `page_id`) VALUES
+('index', 1),
+('contact', 2),
+('about', 3);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
