@@ -48,7 +48,8 @@
           <div class="outer">
               <div class="middle">
                 <div class="inner">
-                <div id="contents">
+                <img id="image" src="./Images/GlazedDonut.png" alt="image" />
+                <div id="content">
                 </div>  
               </div>
           </div>

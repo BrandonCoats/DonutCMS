@@ -1,3 +1,3 @@
 <?php
-    echo "<input type='text' class='content' value='FIX ME' />";
+    echo "<p id='contents'>Put text in here.</p>";
 ?>

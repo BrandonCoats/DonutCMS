@@ -1,9 +1,3 @@
-function AddContent()
-{
-    var contentContainer = document.getElementById("contents");
-    contentContainer.innerHTML+= "<?php include 'contents.php';?>";
-    console.log("Added");
-}
 function Save()
 {//Actually makes the callls to save data from fields to database.
     var request = new XMLHttpRequest();
@@ -19,43 +13,44 @@ function Save()
     //request.onload = loadComplete;
     request.send();
     //start image process
-    // var imagespot = document.getElementById("image");
-    // var valEntered = document.getElementById("imageElm").value;
-    // console.log(valEntered);
-    // StoreImg(valEntered);
-    // imagespot.src = valEntered;
-    // var imgRequest = new XMLHttpRequest();
-    // var imgSearch = 'http://localhost/class/DonutCms/CRUD/LoadImage.php' + '?page=' + page;
-    // console.log(imgSearch);
-    // imgRequest.open('PUT', imgSearch);
-    // //imgRequest.onload = imgLoadComplete;
-    // imgRequest.send();
+    var imagespot = document.getElementById("image");
+    var valEntered = document.getElementById("imageElm").value;
+    console.log(valEntered);
+    StoreImg(valEntered);
+    imagespot.src = valEntered;
+    var imgRequest = new XMLHttpRequest();
+    var imgSearch = 'http://localhost/class/DonutCms/CRUD/LoadImage.php' + '?page=' + page;
+
+    console.log(imgSearch);
+    imgRequest.open('PUT', imgSearch);
+    //imgRequest.onload = imgLoadComplete;
+    imgRequest.send();
 
 }
 
-// function StoreImg(pathToFile)
-// {
-//     var split = pathToFile.split("/");
-//     var imgName = split[split.length-1];
-//     var file = IO.newFile(imgName, pathToFile);
-//     var dest = IO.newFile("*/Images", "");
-//     file.copyTo(dest, imgName);
-//    var preview = document.querySelector('image');
-//    var file = document.querySelector('input[type=file]').files[0];
-//    var reader = FileReader();
-//    var split = pathToFile.split("/");
-//    var filename = split[split.length -1];
-//    reader.onloadend = function()
-//    {
-//        preview.src = reader.result;
-//    }
+function StoreImg(pathToFile)
+{
+    var split = pathToFile.split("/");
+    var imgName = split[split.length-1];
+    var file = IO.newFile(imgName, pathToFile);
+    var dest = IO.newFile("*/Images", "");
+    file.copyTo(dest, imgName);
+   var preview = document.querySelector('image');
+   var file = document.querySelector('input[type=file]').files[0];
+   var reader = FileReader();
+   var split = pathToFile.split("/");
+   var filename = split[split.length -1];
+   reader.onloadend = function()
+   {
+       preview.src = reader.result;
+   }
 
-//    if(file)
-//    {
-//        reader.readAsDataURL(file);
-//    }
-//    else{
-//        preview.src = "";
-//    }
-// }
+   if(file)
+   {
+       reader.readAsDataURL(file);
+   }
+   else{
+       preview.src = "";
+   }
+}
 
