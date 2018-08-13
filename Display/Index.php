@@ -20,9 +20,6 @@
              
             //prompt function
             function prompt($prompt_msg){
-                echo("<script type='text/javascript'> var answer = prompt('".$prompt_msg."'); </script> 
-                <script type='text/javascript' src='AddPage_Script.js'></script>");
-
                 $answer = "<script type='text/javascript'> document.write(answer); </script>";
                 return($answer);
             }
@@ -62,5 +59,6 @@
 
     <script src="./Scripts/LoadPage.js"></script>
     <script src="./Scripts/CheckIfUserIsAdmin.js"></script>
+    <script type='text/javascript' src='AddPage_Script.js'></script>
   </body>
 </html>
