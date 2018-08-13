@@ -69,6 +69,10 @@ a:hover {
     /*whatever width you want*/
 }
 
+button {
+    margin-bottom: 20px;
+}
+
 /* FORM */
 .form-container {
     color: rgb(140, 140, 140);
