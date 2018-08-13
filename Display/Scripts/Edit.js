@@ -12,10 +12,11 @@ function Save()
     request.open('PUT', search);
     //request.onload = loadComplete;
     request.send();
-    StoreImg();
     //start image process
     var imagespot = document.getElementById("image");
     var valEntered = document.getElementById("imageElm").value;
+    console.log(valEntered);
+    StoreImg(valEntered);
     imagespot.src = valEntered;
     var imgRequest = new XMLHttpRequest();
     var imgSearch = 'http://localhost/class/DonutCms/CRUD/LoadImage.php' + '?page=' + page;
@@ -27,10 +28,10 @@ function Save()
 
 }
 
-function StoreImg()
+function StoreImg(pathToFile)
 {
     var split = pathToFile.split("/");
-    var imgName = split[split.length()-1];
+    var imgName = split[split.length-1];
     var file = IO.newFile(imgName, pathToFile);
     var dest = IO.newFile("*/Images", "");
     file.copyTo(dest, imgName);

@@ -46,7 +46,9 @@
               </div>
           </div>
       </div>
-     
+      <div class="footer">
+        <footer>---Copyright Donut CMS 2018---</footer>
+      </div>
     </div>
     <script type="text/javascript" src="./Scripts/LoadPage.js"></script>
     <script type="text/javascript" src="./Scripts/Edit.js"></script>
