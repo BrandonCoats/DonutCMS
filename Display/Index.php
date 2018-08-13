@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
       <title id="title">index</title>
-      <link href='CSS/light.css', rel='stylesheet'>
+      <link href='CSS/style.css', rel='stylesheet'>
   </head>
   <body>
     <div class="container">
@@ -14,7 +14,28 @@
           <a href="about.php">About</a>
           <a href="contact.php">Contact</a>
           <a id="adminOnly" href="EAbout.php">Edit</a>
-          <a id="adminOnly" href="AddPage.php">Add Page</a>
+          <a id="adminOnly" href='?addpage=true'>Add Page</a>
+          
+          <?php
+            //prompt function
+            function prompt($prompt_msg){
+                echo("<script type='text/javascript'> var answer = prompt('".$prompt_msg."'); </script>");
+
+                $answer = "<script type='text/javascript'> document.write(answer); </script>";
+                return($answer);
+            }
+
+            function runMyFunction() {
+              //program
+              $prompt_msg = "Page Name:";
+              $name = prompt($prompt_msg);
+
+            }
+            if (isset($_GET['addpage'])) {
+              runMyFunction();
+            }
+          ?>
+
           <div id="addedPages">
           </div>
           <div id="displayUser">

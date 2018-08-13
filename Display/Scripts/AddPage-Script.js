@@ -2,7 +2,7 @@ var data;
 var request = new XMLHttpRequest();
 
 
-function AddData() {
+function AddPage() {
   var contentTerms = document.getElementById("content").value;
   var page = document.getElementById("page").value;
   console.log(contentTerms);
