@@ -37,3 +37,5 @@ window.addEventListener('load', function() {
         }
     });
 });
+
+function imageIsLoaded(e) { alert(e); }
